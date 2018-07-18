@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="starry0819">
 <meta property="og:description" content="对于正数而言, &amp;gt;&amp;gt; 和 &amp;gt;&amp;gt;&amp;gt;的操作结果一致1215 &amp;gt;&amp;gt; 2 = 315 &amp;gt;&amp;gt;&amp;gt; 2 = 3 其实就是将15除以2的2次方,得到的商。转为二进制可能给为直观。120000 1111 &amp;gt;&amp;gt; 2 = 0000 0011 = 3, 低位丢失0000 1111 &amp;gt;&amp;gt;&amp;gt; 2 = 0000 0011 = 3, 低位丢">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-18T06:59:26.750Z">
+<meta property="og:updated_time" content="2018-07-18T07:14:31.230Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中&gt;&gt;和&gt;&gt;&gt;位运算操作符的区别">
 <meta name="twitter:description" content="对于正数而言, &amp;gt;&amp;gt; 和 &amp;gt;&amp;gt;&amp;gt;的操作结果一致1215 &amp;gt;&amp;gt; 2 = 315 &amp;gt;&amp;gt;&amp;gt; 2 = 3 其实就是将15除以2的2次方,得到的商。转为二进制可能给为直观。120000 1111 &amp;gt;&amp;gt; 2 = 0000 0011 = 3, 低位丢失0000 1111 &amp;gt;&amp;gt;&amp;gt; 2 = 0000 0011 = 3, 低位丢">
@@ -301,6 +301,7 @@
       
         <p><strong>对于正数而言</strong>, &gt;&gt; 和 &gt;&gt;&gt;的操作结果一致<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">15 &gt;&gt; 2 = 3</span><br><span class="line">15 &gt;&gt;&gt; 2 = 3</span><br></pre></td></tr></table></figure></p>
 <p>其实就是将15除以2的2次方,得到的商。转为二进制可能给为直观。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0000 1111 &gt;&gt; 2 = 0000 0011 = 3, 低位丢失</span><br><span class="line">0000 1111 &gt;&gt;&gt; 2 = 0000 0011 = 3, 低位丢失</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <hr>
 <p><strong>对于负数而言</strong>, &gt;&gt; 和 &gt;&gt;&gt;的操作结果有一点区别, 看看下面的例子：</p>
 <p><font color="red">为了方便，下面的二进制操作我们都是以八位进行的，而不是32位</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-15 &gt;&gt; 2 = -4</span><br><span class="line">-15 &gt;&gt;&gt; 2 = 60</span><br></pre></td></tr></table></figure></p>

@@ -299,19 +299,15 @@
 
       
         
-          
-            <p><strong>对于正数而言</strong>, &gt;&gt; 和 &gt;&gt;&gt;的操作结果一致<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">15 &gt;&gt; 2 = 3</span><br><span class="line">15 &gt;&gt;&gt; 2 = 3</span><br></pre></td></tr></table></figure></p>
+          <p><strong>对于正数而言</strong>, &gt;&gt; 和 &gt;&gt;&gt;的操作结果一致<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">15 &gt;&gt; 2 = 3</span><br><span class="line">15 &gt;&gt;&gt; 2 = 3</span><br></pre></td></tr></table></figure></p>
 <p>其实就是将15除以2的2次方,得到的商。转为二进制可能给为直观。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0000 1111 &gt;&gt; 2 = 0000 0011 = 3, 低位丢失</span><br><span class="line">0000 1111 &gt;&gt;&gt; 2 = 0000 0011 = 3, 低位丢失</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p><strong>对于负数而言</strong>, &gt;&gt; 和 &gt;&gt;&gt;的操作结果有一点区别, 看看下面的例子：</p>
-<p><font color="red">为了方便，下面的二进制操作我们都是以八位进行的，而不是32位</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-15 &gt;&gt; 2 = -4</span><br><span class="line">-15 &gt;&gt;&gt; 2 = 60</span><br></pre></td></tr></table></figure></p>
-<p>怎么会是这样的？负数的移位操作怎么变成正数了？同样我们将上面的式子转换为二进制来看看。首先我们得知道，在计算机中，负数是以补码的形式存储的（至于什么是补码，大家可以自行百度了解）<br>-15的补码是1111 0001，所以上面的操作转换为二进制如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1111 0001 &gt;&gt; 2 = 1111 1100（还是一个负数，转换为十进制就是-4）</span><br><span class="line">1111 0001 &gt;&gt;&gt; 2 = 0011 1100（这变成了正数了，转换成十进制就是60）</span><br></pre></td></tr></table></figure></p>
-<p>可能有些小伙伴在java中运行-15 &gt;&gt;&gt; 2的结果为1073741820而不是60.<br>这里解释一下：<br>上面也提到了，为了方便直观展示，选择8位，实际在Java中的int类型是4个字节，32位。<br>所以实际进行-15 &gt;&gt;&gt; 2的位运算后的结果是:<br>0011 1111 1111 1111 1111 1111 1111 1100<br>所以是1073741820</p>
-<p><strong>结论：</strong></p>
-<pre><code>1、当移位的数是正数的时候，&gt;&gt; 和&gt;&gt;&gt;效果都是一样的；
-2、当移位的数是负数的时候，&gt;&gt;将二进制高位用1补上，而&gt;&gt;&gt;将二进制高位用0补上，这就导致了&gt;&gt;&gt;将负数的移位操作结果变成了正数（因为高位用0补上了）。
-</code></pre>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/18/java/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
